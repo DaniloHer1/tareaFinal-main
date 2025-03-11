@@ -36,6 +36,15 @@ public class Curso {
     }
 
     public void aniadirAlumno(Persona p) {
+
         listaAlumnos.add(p);
+    }
+
+    public TreeSet<Persona> getListaAlumnos() {
+        return listaAlumnos;
+    }
+
+    public void setListaAlumnos(TreeSet<Persona> listaAlumnos) {
+        this.listaAlumnos = listaAlumnos;
     }
 }
