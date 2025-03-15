@@ -19,11 +19,19 @@ public class Curso {
         return nombre;
     }
 
+    /**
+     * Constructor de Curso que tiene como parametro un atributo nombre.
+     * @param nombre
+     */
     public Curso(String nombre) {
         this.nombre = nombre;
         listaAlumnos = new TreeSet<>();
     }
 
+    /**
+     * Sobreescribe la clase toString para mostar eb xpediente,el nif, el nombre y apellidos del alumno.
+     * @return
+     */
     @Override
     public String toString() {
         String s = "--------------------" + nombre + "-----------------\n";
@@ -35,11 +43,19 @@ public class Curso {
         return s;
     }
 
+    /**
+     * Añade alumnos a un ArrayList de personas.
+     * @param p
+     */
     public void aniadirAlumno(Persona p) {
 
         listaAlumnos.add(p);
     }
 
+    /**
+     * GETTER de ListaAlumnos
+     * @return
+     */
     public TreeSet<Persona> getListaAlumnos() {
         return listaAlumnos;
     }
