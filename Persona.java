@@ -15,6 +15,9 @@ public class Persona implements Comparable<Persona> {
     private char genero;
     private LocalDate nacimiento;
 
+    /**
+     * Constructor Vacio de Persona
+     */
     public Persona() {
         nif = new Nif();
         nombre = "";
@@ -22,11 +25,24 @@ public class Persona implements Comparable<Persona> {
         nacimiento = LocalDate.of(1990, 1, 1);
     }
 
+    /**
+     * Constructor de Persona con atributo NIF
+     * @param nif
+     */
     public Persona(int nif) {
         this();
         this.nif = new Nif(nif);
     }
 
+    /**
+     * Constructor de Persona completo
+     * @param nif
+     * @param nombre
+     * @param genero
+     * @param dia
+     * @param mes
+     * @param ano
+     */
     public Persona(int nif, String nombre, char genero,
             int dia, int mes, int ano) {
         this.nif = new Nif(nif);
@@ -89,6 +105,12 @@ public class Persona implements Comparable<Persona> {
         return a.nif.toString().equals(this.nif.toString());
     }
 
+    /**
+     * Sobreescribimos el metodo equals
+     * @param obj
+     * @return
+     * @author Daniel
+     */
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -105,6 +127,11 @@ public class Persona implements Comparable<Persona> {
         return Objects.equals(this.nif, other.nif);
     }
 
+    /**
+     * Compara si un objecto,x, es igual a otro objeto y de su mismo tipo y si asi es devuelve 0
+     * @param o the object to be compared.
+     * @return
+     */
     @Override
     public int compareTo(Persona o) {
         return this.nif.toString().compareTo(o.nif.toString());
